@@ -1,10 +1,11 @@
 import "./App.css";
 import Form from "./components/form/Form";
 import Navbar from "./components/navbar/Navbar";
-import Table from "./components/table/Table";
+// import Table from "./components/table/Table";
 import { ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
 import { AddUser } from "./utils/functions";
+import TableData from "./components/table/Table";
 
 const initialValues = {
   username: "",
@@ -24,7 +25,7 @@ function App() {
       <Navbar />
       <div className="App">
         <Form info={info} setInfo={setInfo} handleSubmit={handleSubmit} />
-        <Table />
+        <TableData />
       </div>
     </>
   );
