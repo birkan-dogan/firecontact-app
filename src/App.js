@@ -2,7 +2,7 @@ import "./App.css";
 import Form from "./components/form/Form";
 import Navbar from "./components/navbar/Navbar";
 // import Table from "./components/table/Table";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import { AddUser, UpdateUser } from "./utils/functions";
 import TableData from "./components/table/Table";
@@ -30,11 +30,11 @@ function App() {
   };
   return (
     <>
-      <ToastContainer />
       <Navbar />
       <div className="App">
         <Form info={info} setInfo={setInfo} handleSubmit={handleSubmit} />
         <TableData editUser={editUser} />
+        <ToastContainer />
       </div>
     </>
   );
