@@ -15,6 +15,7 @@ const initialValues = {
 
 function App() {
   const [info, setInfo] = useState(initialValues);
+  const [isAdd, setIsAdd] = useState("ADD"); // for conditional rendering
   const handleSubmit = (e) => {
     e.preventDefault();
     if (info.id) {
@@ -24,15 +25,22 @@ function App() {
       AddUser(info);
     }
     setInfo(initialValues); // to keep inputs empty
+    setIsAdd("ADD");
   };
   const editUser = (id, username, phoneNumber, gender) => {
+    setIsAdd("UPDATE");
     setInfo({ id, username, phoneNumber, gender });
   };
   return (
     <>
       <Navbar />
       <div className="App">
-        <Form info={info} setInfo={setInfo} handleSubmit={handleSubmit} />
+        <Form
+          info={info}
+          setInfo={setInfo}
+          handleSubmit={handleSubmit}
+          isAdd={isAdd}
+        />
         <TableData editUser={editUser} />
         <ToastContainer />
       </div>
