@@ -12,7 +12,7 @@ import { DeleteUser, useFetch } from "../../utils/functions";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 
-const TableData = () => {
+const TableData = ({ editUser }) => {
   const { isLoading, contactList } = useFetch();
 
   return (
@@ -67,7 +67,17 @@ const TableData = () => {
                   >
                     <DeleteIcon />
                   </TableCell>
-                  <TableCell textAlign="center">
+                  <TableCell
+                    textAlign="center"
+                    onClick={() =>
+                      editUser(
+                        item.id,
+                        item.username,
+                        item.phoneNumber,
+                        item.gender
+                      )
+                    }
+                  >
                     <EditIcon />
                   </TableCell>
                 </TableRow>
