@@ -50,7 +50,7 @@ export const useFetch = () => {
 export const DeleteUser = (id) => {
   const db = getDatabase(firebase);
   const userRef = ref(db, "users/");
-  remove(ref(db, "users/" + id);
+  remove(ref(db, "users/" + id));
   Toastify("Deleted successfully");
 };
 
